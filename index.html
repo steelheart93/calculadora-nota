@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Nota</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container p-4">
+        <h1>Calculadora Nota - Matemáticas Especiales</h1>
+        <br><br>
+        <div class="row">
+            <div class="col-6">
+                <h3>Parciales, 3 * 75% => 25% (C/U)</h3>
+                <br>
+                <div class="row p-3">
+                    Parcial Uno = ( 0.3*
+                    <input type="number" id="a1" placeholder="Nota Apuntes 1" style="width: 9em;">
+                    +
+                    <input type="number" id="p1" placeholder="Nota Parcial 1" style="width: 9em;">
+                    *0.7 ) *0.25
+                </div>
+                <div class="row p-3">
+                    Parcial Dos = ( 0.3*
+                    <input type="number" id="a2" placeholder="Nota Apuntes 2" style="width: 9em;">
+                    +
+                    <input type="number" id="p2" placeholder="Nota Parcial 2" style="width: 9em;">
+                    *0.7 ) *0.25
+                </div>
+                <div class="row p-3">
+                    Parcial Tres = ( 0.3*
+                    <input type="number" id="a3" placeholder="Nota Apuntes 3" style="width: 9em;">
+                    +
+                    <input type="number" id="p3" placeholder="Nota Parcial 3" style="width: 9em;">
+                    *0.7 ) *0.25
+                </div>
+            </div>
+            <div class="col-6">
+                <h3>Talleres, 3 * (25% dividido 3)</h3>
+                <br>
+                <div class="row p-3">
+                    Talleres = (
+                    <input type="number" id="t1" placeholder="Taller 1" style="width: 7em;">
+                    +
+                    <input type="number" id="t2" placeholder="Taller 2" style="width: 7em;">
+                    +
+                    <input type="number" id="t3" placeholder="Taller 3" style="width: 7em;">
+                    ) *(0.25/3)
+                </div>
+                <br>
+                <div class="row p-3">
+                    <div class="col-6">
+                        <button class="btn btn-dark btn-raised" onclick="calcular()">Calcular Definitiva</button>
+                    </div>
+                    <div class="col-6 mt-1">
+                        <input type="number" id="definitiva" placeholder="Nota Definitiva" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+            let definitiva = 0;
+
+            a1 = document.getElementById('a1').value;
+            a2 = document.getElementById('a2').value;
+            a3 = document.getElementById('a3').value;
+
+            p1 = document.getElementById('p1').value;
+            p2 = document.getElementById('p2').value;
+            p3 = document.getElementById('p3').value;
+
+            t1 = document.getElementById('t1').value;
+            t2 = document.getElementById('t2').value;
+            t3 = document.getElementById('t3').value;
+
+            parcialUno = (0.3 * a1 + p1 * 0.7) * 0.25;
+            parcialDos = (0.3 * a1 + p1 * 0.7) * 0.25;
+            parcialTres = (0.3 * a1 + p1 * 0.7) * 0.25;
+
+            talleres = (t1 * 0.25 + t2 * 0.25 + t3 * 0.25) / 3;
+
+            definitiva = parcialUno + parcialDos + parcialTres + talleres;
+            document.getElementById('definitiva').value = definitiva;
+        }
+    </script>
+</body>
+
+</html>
