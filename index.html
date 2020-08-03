@@ -20,23 +20,23 @@
                 <h3>Parciales, 3 * 75% => 25% (C/U)</h3>
                 <br>
                 <div class="row p-3">
-                    Parcial Uno = ( 0.3*
+                    Parcial Uno = (0.3*
                     <input type="number" id="a1" placeholder="Nota Apuntes 1" style="width: 9em;">
                     +
                     <input type="number" id="p1" placeholder="Nota Parcial 1" style="width: 9em;">
-                    *0.7 ) *0.25
+                    *0.7) *0.25
                 </div>
                 <div class="row p-3">
-                    Parcial Dos = ( 0.3*
+                    Parcial Dos = (0.3*
                     <input type="number" id="a2" placeholder="Nota Apuntes 2" style="width: 9em;">
                     +
                     <input type="number" id="p2" placeholder="Nota Parcial 2" style="width: 9em;">
-                    *0.7 ) *0.25
+                    *0.7) *0.25
                 </div>
                 <div class="row p-3">
-                    Parcial Tres = 
-                    <input type="number" id="a3" placeholder="Nota Apuntes 3" style="width: 9em;">
-                    *0.25
+                    Parcial Tres = (
+                    <input type="number" id="p3" placeholder="Nota Parcial 3" style="width: 9em;">
+                    ) *0.25
                 </div>
             </div>
             <div class="col-6">
@@ -85,7 +85,7 @@
 
             parcialUno = (0.3 * a1 + p1 * 0.7) * 0.25;
             parcialDos = (0.3 * a2 + p2 * 0.7) * 0.25;
-            parcialTres = 0 + (p3 * 0.25);
+            parcialTres = p3 * 0.25;
 
             talleres = (t1 * 0.25 + t2 * 0.25) / 2;
 
