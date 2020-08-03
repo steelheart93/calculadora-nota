@@ -34,24 +34,18 @@
                     *0.7 ) *0.25
                 </div>
                 <div class="row p-3">
-                    Parcial Tres = ( 0.3*
-                    <input type="number" id="a3" placeholder="Nota Apuntes 3" style="width: 9em;">
-                    +
-                    <input type="number" id="p3" placeholder="Nota Parcial 3" style="width: 9em;">
-                    *0.7 ) *0.25
+                    Parcial Tres = <input type="number" id="a3" placeholder="Nota Apuntes 3" style="width: 9em;"> *0.25
                 </div>
             </div>
             <div class="col-6">
-                <h3>Talleres, 3 * (25% dividido 3)</h3>
+                <h3>Talleres, 2 * (25% dividido 2)</h3>
                 <br>
                 <div class="row p-3">
                     Talleres = (
                     <input type="number" id="t1" placeholder="Taller 1" style="width: 7em;">
                     +
                     <input type="number" id="t2" placeholder="Taller 2" style="width: 7em;">
-                    +
-                    <input type="number" id="t3" placeholder="Taller 3" style="width: 7em;">
-                    ) *(0.25/3)
+                    ) *(0.125)
                 </div>
                 <br>
                 <div class="row p-3">
@@ -78,7 +72,6 @@
 
             a1 = document.getElementById('a1').value;
             a2 = document.getElementById('a2').value;
-            a3 = document.getElementById('a3').value;
 
             p1 = document.getElementById('p1').value;
             p2 = document.getElementById('p2').value;
@@ -90,9 +83,9 @@
 
             parcialUno = (0.3 * a1 + p1 * 0.7) * 0.25;
             parcialDos = (0.3 * a2 + p2 * 0.7) * 0.25;
-            parcialTres = (0.3 * a3 + p3 * 0.7) * 0.25;
+            parcialTres = p3 * 0.25;
 
-            talleres = (t1 * 0.25 + t2 * 0.25 + t3 * 0.25) / 3;
+            talleres = (t1 * 0.25 + t2 * 0.25) / 2;
 
             definitiva = parcialUno + parcialDos + parcialTres + talleres;
             document.getElementById('definitiva').value = definitiva;
